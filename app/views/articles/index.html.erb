@@ -1,0 +1,21 @@
+<h1>Mostrando os artigos</h1>
+<%= link_to 'Voltar à homepage', controller: 'welcome' %>
+<br><br><br><br>
+
+<%= link_to 'Novo Artigo', new_article_path %>
+<table>
+    <tr>
+        <th>Título</th>
+        <th>Texto</th>
+        <th></th>
+    </tr>
+
+    <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.text %></td>
+            <td><%= link_to 'Mostrar artigo completo', article_path(article) %></td>
+        </tr>
+    <% end %>
+</table>
+
